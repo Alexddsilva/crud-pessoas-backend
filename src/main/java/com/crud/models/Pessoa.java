@@ -19,7 +19,7 @@ public class Pessoa implements Serializable {
     private String email;
     private String telefone;
     private String endereco;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = (15))
     private String cpf;
 
     public Long getId() {

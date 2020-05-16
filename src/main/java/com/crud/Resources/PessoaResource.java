@@ -27,9 +27,18 @@ public class PessoaResource {
 
     @Path("/{id}")
     @GET
-    public Pessoa findPessoasById(@PathParam("id") Long id){
-        Pessoa pessoa = em.find(Pessoa.class, id);
-        return pessoa;
+    public Response findPessoasById(@PathParam("id") Long id){
+        try {
+            Pessoa pessoa = em.find(Pessoa.class, id);
+            JsonObject err = Json.createObjectBuilder().add("Error", "Id not found.").build();
+
+            if(pessoa == null) {
+                return Response.ok(err).status(404).build();
+            }
+            return Response.ok(pessoa).build();
+        } catch (Exception e ) {
+            throw e;
+        }
     }
 
     @POST

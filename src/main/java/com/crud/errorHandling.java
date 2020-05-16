@@ -1,4 +1,4 @@
-package com.crud.errors;
+package com.crud;
 
 
 import javax.ws.rs.core.Response;
