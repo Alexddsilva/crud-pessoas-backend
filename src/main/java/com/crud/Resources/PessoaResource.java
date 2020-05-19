@@ -80,7 +80,6 @@ public class PessoaResource {
     public Response deletePessoa(@PathParam("id") Long id) {
         Pessoa pessoa = em.find(Pessoa.class, id);
         if(pessoa == null) {
-            System.out.println("-----------------Pessoa: " + pessoa);
             JsonObject err = Json.createObjectBuilder().add("Error", "Id not found.").build();
             return Response.ok(err).status(404).build();
         } else {
