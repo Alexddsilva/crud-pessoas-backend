@@ -1,2 +1,3 @@
+com/crud/models/Pessoa.class
 com/crud/errorHandling.class
 com/crud/Resources/PessoaResource.class
